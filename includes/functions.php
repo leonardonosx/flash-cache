@@ -532,7 +532,7 @@ function flash_cache_remove_marker($filename, $marker) {
 		if ($markerdata) {
 			$state = true;
 			foreach ($markerdata as $n => $markerline) {
-				if (strpos($markerline, '# BEGIN ' . $marker) !== false)
+				if (strpos($markerline, '#BEGIN ' . $marker) !== false)
 					$state = false;
 				if ($state) {
 					if ($n + 1 < count($markerdata))
