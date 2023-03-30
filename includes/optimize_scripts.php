@@ -104,7 +104,10 @@ class flash_cache_optimize_scripts {
 		$all_css_code = apply_filters('flash_cache_js_code_before_join', $all_js_code, $full_path_file_js, flash_cache_process::$advanced_settings );
 		file_put_contents($full_path_file_js, $all_js_code);
 
-		$content = self::insert_before_of($content, 'body', '<script type="text/javascript" src="' . $url_file_js . '"></script>');
+		$url_file_js_n =  '/flash_cache/www.netmdp.com/scripts/'.$basename_js . '.js';
+
+
+		$content = self::insert_before_of($content, 'body', '<script type="text/javascript" src="' . $url_file_js_n . '"></script>');
 
 		return $content;
 	}
