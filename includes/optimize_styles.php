@@ -156,7 +156,9 @@ class flash_cache_optimize_styles {
 		$all_css_code = apply_filters('flash_cache_css_code_before_join', $all_css_code, $full_path_file_css, flash_cache_process::$advanced_settings );
 		file_put_contents($full_path_file_css, $all_css_code);
 
-		$url_file_css_n =  '/flash_cache/www.netmdp.com/styles/'.$basename_css . '.css';
+		$url_o  = $_SERVER['HTTP_HOST'];
+
+		$url_file_css_n =  '/flash_cache/'. $url_o .'/styles/'.$basename_css . '.css';
 
 		$content = self::insert_before_of($content, 'body', '<link media="all" rel="stylesheet" href="' . $url_file_css_n . '" />');
 		
